@@ -5,6 +5,7 @@ import avatar2 from "@/assets/images/avatar-lula-meyers.jpg";
 import avatar3 from "@/assets/images/avatar-florence-shaw.jpg";
 import Image from "next/image";
 import Avatar from "@/components/Avatar";
+import Key from "@/components/Key";
 
 const features = [
     "Asset Library",
@@ -84,13 +85,24 @@ export default function Features() {
                         title="Keyboard Quick Actions"
                         description="Powerful commands to help you create designs
                                 more quickly"
-                    ></FeatureCard>
+                    >
+                        <div className="aspect-video flex items-center justify-center gap-4">
+                            <Key className="w-28">shift</Key>
+                            <Key>alt</Key>
+                            <Key>c</Key>
+                        </div>
+                    </FeatureCard>
                 </div>
-                <div>
-                    {features.map((feature, idx) => (
-                        <div key={idx}>
-                            <span></span>
-                            <span>{feature}</span>
+                <div className="mt-8 flex flex-wrap gap-3 justify-center">
+                    {features.map((feature) => (
+                        <div
+                            key={feature}
+                            className="bg-neutral-900 border border-white/10 inline-flex px-3 py-1.5 rounded-2xl gap-3 items-center"
+                        >
+                            <span className="bg-lime-400 text-orange-950 size-5 rounded-full inline-flex justify-center items-center text-xl">
+                                &#10038;
+                            </span>
+                            <span className="font-medium">{feature}</span>
                         </div>
                     ))}
                 </div>
